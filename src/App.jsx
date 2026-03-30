@@ -1,6 +1,9 @@
 import Banner from "./component/Banner"
 import NavBar from "./component/NavBar"
 import Rating from "./component/Rating"
+import Products from "./component/Products"
+import GetStarted from "./components/GetStarted";
+
 
 
 function App() {
@@ -12,6 +15,8 @@ function App() {
     
     <Banner/>
     <Rating/>
+    <Products/>
+    <GetStarted/>
 
     </>
   )
