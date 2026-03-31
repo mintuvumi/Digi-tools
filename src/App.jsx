@@ -4,6 +4,7 @@ import Rating from "./components/Rating"
 import Products from "./components/Products"
 import GetStarted from "./components/GetStarted";
 import Pricing from "./components/Pricing";
+import Footer from "./components/Footer";
 
 
 
@@ -18,6 +19,8 @@ function App() {
     <Products/>
     <GetStarted/>
     <Pricing/>
+    <Footer/>
+    
 
 
     </>
