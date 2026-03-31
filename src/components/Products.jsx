@@ -1,7 +1,7 @@
 import React from "react";
 import products from "../data/products";
 
-const Products = () => {
+const Products = ({ addToCart }) => {
   return (
     <section className="bg-gray-100 py-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
@@ -22,7 +22,7 @@ const Products = () => {
             Products
           </button>
           <button className="bg-white text-gray-700 px-6 py-2 rounded-full border">
-            Cart (2)
+            Cart (0)
           </button>
         </div>
 
@@ -45,11 +45,12 @@ const Products = () => {
               </span>
 
               {/* ICON */}
-              <div className="text-3xl mb-3">✨</div>
+              <div className="text-3xl mb-3">✨ img</div>
 
               {/* NAME */}
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
                 {product.name}
+
               </h3>
 
               {/* DESC */}
@@ -71,8 +72,11 @@ const Products = () => {
               </ul>
 
               {/* BUTTON */}
-              <button className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-full hover:opacity-90 transition">
-                Buy Now
+              <button
+                onClick={() => addToCart(product)}
+                className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-full">
+                
+                Add to Cart
               </button>
 
             </div>

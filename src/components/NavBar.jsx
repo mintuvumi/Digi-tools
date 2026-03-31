@@ -1,8 +1,8 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ cart, setOpenCart }) => {
   return (
-    <nav className="bg-white border-b px-6 md:px-16 py-4">
+    <nav className="bg-white px-6 md:px-16 py-4 fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* LOGO */}
@@ -21,9 +21,16 @@ const Navbar = () => {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
-          <span className="hidden md:block text-gray-600 cursor-pointer">
-            🛒
-          </span>
+         <div
+            className="relative cursor-pointer"
+            onClick={() => setOpenCart(true)}  
+          >
+          🛒
+            
+            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs px-2 rounded-full">
+              {cart.length}
+            </span>
+          </div>
 
           <button className="text-gray-600 hover:text-indigo-600">
             Login

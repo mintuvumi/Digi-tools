@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImg from "../assets/banner.png"; // 👉 তোমার image নাম অনুযায়ী change করবা
+import bannerImg from "../assets/banner.png"; 
 
 const Banner = () => {
   return (
@@ -27,7 +27,7 @@ const Banner = () => {
               Explore Products
             </button>
 
-            <button className="flex items-center gap-2 border border-indigo-500 text-indigo-600 px-6 py-3 rounded-full hover:bg-indigo-50 transition">
+            <button className="flex items-center gap-2 border border-indigo-500 text-indigo-600 px-6 py-3 rounded-full hover:bg-indigo-500 transition text-indigo-50">
               ▶ Watch Demo
             </button>
           </div>
