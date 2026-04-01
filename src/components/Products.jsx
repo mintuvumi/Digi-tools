@@ -110,11 +110,12 @@ const Products = ({ addToCart, cart, view, setView }) => {
                 {/* BUTTON */}
                 <button
                   onClick={(e) => {
-                    e.stopPropagation(); // 🔥 important
+                    e.stopPropagation(); 
+                    setSelectedId(product.id);   
                     addToCart(product);
-                  }}
-                  className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-full"
-                >
+                                  }}
+                   className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-full">
+                
                   Add to Cart
                 </button>
 
