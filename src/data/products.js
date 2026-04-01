@@ -1,3 +1,11 @@
+import toolImg from "../assets/design-tool.png";
+import portImg from "../assets/portfolio.png";
+import socialImg from "../assets/social-media.png";
+import writingImg from "../assets/writing.png";
+import operationImg from "../assets/operation.png";
+import designImg from "../assets/design-tool.png";
+
+
 const products = [
   {
     id: 1,
@@ -8,7 +16,7 @@ const products = [
     tag: "popular",
     tagType: "popular",
     features: ["Blog writing", "SEO content", "Templates"],
-    icon: "ai"
+    image: toolImg,
   },
   {
     id: 2,
@@ -19,7 +27,7 @@ const products = [
     tag: "best seller",
     tagType: "best seller",
     features: ["Figma files", "Responsive layouts", "Modern design"],
-    icon: "design"
+    image: portImg,
   },
   {
     id: 3,
@@ -30,7 +38,7 @@ const products = [
     tag: "new",
     tagType: "new",
     features: ["HD images", "4K videos", "Unlimited downloads"],
-    icon: "assets"
+    image: socialImg,
   },
   {
     id: 4,
@@ -41,7 +49,7 @@ const products = [
     tag: "popular",
     tagType: "popular",
     features: ["Task automation", "Integrations", "Scheduling"],
-    icon: "automation"
+    image: writingImg,
   },
   {
     id: 5,
@@ -52,7 +60,7 @@ const products = [
     tag: "best seller",
     tagType: "best seller",
     features: ["ATS friendly", "PDF export", "Templates"],
-    icon: "resume"
+    image: operationImg,
   },
   {
     id: 6,
@@ -63,7 +71,7 @@ const products = [
     tag: "new",
     tagType: "new",
     features: ["Post templates", "Captions", "Hashtag generator"],
-    icon: "social"
+    image: designImg,
   }
 ];
 

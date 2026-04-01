@@ -2,7 +2,7 @@ import React from "react";
 
 const CartProduct = ({ cart, openCart, setOpenCart, removeItem, changeQty, checkout }) => {
 
-  // 🔥 TOTAL (এটা return এর আগে থাকতে হবে)
+  
   const total = cart.reduce((sum, item) => {
     return sum + item.price * item.qty;
   }, 0);
@@ -27,7 +27,7 @@ const CartProduct = ({ cart, openCart, setOpenCart, removeItem, changeQty, check
                       onClick={() => removeItem(item.id)}
                       className="text-red-500"
                     >
-                      ✕
+                      X
                     </button>
                   </div>
 
@@ -52,7 +52,7 @@ const CartProduct = ({ cart, openCart, setOpenCart, removeItem, changeQty, check
                 </div>
               ))}
 
-              {/* 🔥 TOTAL এখানে বসেছে (Checkout এর আগে) */}
+              
               <h3 className="font-bold mt-4">
                 Total: ${total.toFixed(2)}
               </h3>

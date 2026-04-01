@@ -9,13 +9,16 @@ import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
 import CartProduct from "./components/CartProduct";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
 
-  
   const [cart, setCart] = useState([]);
   const [openCart, setOpenCart] = useState(false);
+  const [view, setView] = useState("products");
 
-  // 🔥 2. add to cart function
+  // Add to cart
   const addToCart = (product) => {
     const exist = cart.find(item => item.id === product.id);
 
@@ -31,12 +34,12 @@ function App() {
     }
   };
 
-  // 🔥 3. remove item
+  // Remove item
   const removeItem = (id) => {
     setCart(cart.filter(item => item.id !== id));
   };
 
-  // 🔥 4. qty change
+  //  Quantity change
   const changeQty = (id, type) => {
     const updated = cart.map(item => {
       if (item.id === id) {
@@ -49,9 +52,9 @@ function App() {
     setCart(updated);
   };
 
-  // 🔥 5. checkout
+  //  Toast
   const checkout = () => {
-    alert("Order Done ✅");
+    toast.success("Order placed successfully!");
     setCart([]);
     setOpenCart(false);
   };
@@ -61,17 +64,27 @@ function App() {
       {/* Navbar */}
       <Navbar cart={cart} setOpenCart={setOpenCart} />
 
-      <Banner />
-      <Rating />
-
       
-      <Products addToCart={addToCart} />
+      <div className="pt-20">
 
-      <GetStarted />
-      <Pricing />
-      <Footer />
+        <Banner />
+        <Rating />
 
-      {/* 🔥 Cart Drawer */}
+        
+        <Products 
+          addToCart={addToCart}
+          cart={cart}
+          view={view}
+          setView={setView}
+        />
+
+        <GetStarted />
+        <Pricing />
+        <Footer />
+
+      </div>
+
+      {/* Cart Drawer */}
       <CartProduct
         cart={cart}
         openCart={openCart}
@@ -80,6 +93,10 @@ function App() {
         changeQty={changeQty}
         checkout={checkout}
       />
+
+      {/* Toast */}
+      <ToastContainer position="top-right" autoClose={2000} />
+
     </>
   );
 }

@@ -41,7 +41,7 @@ const Banner = () => {
               alt="banner"
               className="rounded-2xl shadow-xl w-full max-w-md"
             />
-            {/* overlay effect */}
+            
             <div className="absolute inset-0 bg-white/20 rounded-2xl"></div>
           </div>
         </div>
