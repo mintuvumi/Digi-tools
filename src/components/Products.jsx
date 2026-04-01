@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import products from "../data/products";
 
 const Products = ({ addToCart, cart, view, setView }) => {
+
+  // 🔥 selected card state
+  const [selectedId, setSelectedId] = useState(null);
+
   return (
     <section className="bg-gray-100 py-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
@@ -54,7 +58,12 @@ const Products = ({ addToCart, cart, view, setView }) => {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-white rounded-xl p-6 text-left shadow-sm hover:shadow-lg transition duration-300 relative"
+                onClick={() => setSelectedId(product.id)}
+                className={`rounded-xl p-6 text-left shadow-sm hover:shadow-lg transition duration-300 relative cursor-pointer
+                  ${selectedId === product.id
+                    ? "bg-green-100 border-2 border-green-500"
+                    : "bg-white"}
+                `}
               >
 
                 {/* TAG */}
@@ -100,7 +109,10 @@ const Products = ({ addToCart, cart, view, setView }) => {
 
                 {/* BUTTON */}
                 <button
-                  onClick={() => addToCart(product)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // 🔥 important
+                    addToCart(product);
+                  }}
                   className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-full"
                 >
                   Add to Cart
